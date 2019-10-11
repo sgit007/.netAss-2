@@ -17,13 +17,6 @@ namespace TextEditor
             InitializeComponent();
         }
 
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.CustomFormat = "dd-MM-yyyy";
-        }
-
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Hide();   
@@ -31,7 +24,19 @@ namespace TextEditor
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            if(usernameTextBox.Text != "" && reEnterPasswordTextBox.Text!="" && )
+            if (usernameTextBox.Text != "" && passwordTextBox.Text != "" && reEnterPasswordTextBox.Text != "" && FirstNameBox.Text != "" && LastNameBox.Text != "" && userTypeComboBox.Text != "")
+            {
+                if (passwordTextBox.Text == reEnterPasswordTextBox.Text)
+                {
+                    if (FirstNameBox == LastNameBox)
+                    {
+                        var isNumeric = int.TryParse("123", out int n);
+                        MessageBox.Show("successful!", "Congrats");
+                    }
+                }
+            }
+            else
+                MessageBox.Show("Please fill out all the details", "Error"); 
         }
     }
 }

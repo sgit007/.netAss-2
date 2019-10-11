@@ -18,19 +18,19 @@ namespace TextEditor
             InitializeComponent();
         }
 
-        private void exitButton_Click(object sender, EventArgs e)
+        private void exitButton_Click(object sender, EventArgs e) //exits the form
         {
             this.Close(); 
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private void loginButton_Click(object sender, EventArgs e) //logs the user in
         {
             
             TextFile ss = new TextFile();
             
             try
             {
-                string[] lines = System.IO.File.ReadAllLines("login.txt");
+                string[] lines = System.IO.File.ReadAllLines("login.txt"); //reads the user details from login.txt
 
                 foreach (string set in lines)
                 {
@@ -49,7 +49,7 @@ namespace TextEditor
             }
         }
 
-        private void newUserButton_Click(object sender, EventArgs e)
+        private void newUserButton_Click(object sender, EventArgs e) //opens new user form
         {
             NewUser n = new NewUser();
             n.Show();

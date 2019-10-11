@@ -10,3 +10,15 @@ D:\Sakib UTS\Net Programming\Assignment 2\TextEditor\TextEditor\obj\Debug\TextEd
 D:\Sakib UTS\Net Programming\Assignment 2\TextEditor\TextEditor\obj\Debug\TextEditor.csproj.CoreCompileInputs.cache
 D:\Sakib UTS\Net Programming\Assignment 2\TextEditor\TextEditor\obj\Debug\TextEditor.exe
 D:\Sakib UTS\Net Programming\Assignment 2\TextEditor\TextEditor\obj\Debug\TextEditor.pdb
+D:\Git\.netAss-2\TextEditor\bin\Debug\TextEditor.exe.config
+D:\Git\.netAss-2\TextEditor\bin\Debug\TextEditor.exe
+D:\Git\.netAss-2\TextEditor\bin\Debug\TextEditor.pdb
+D:\Git\.netAss-2\TextEditor\obj\Debug\TextEditor.csprojAssemblyReference.cache
+D:\Git\.netAss-2\TextEditor\obj\Debug\TextEditor.NewUser.resources
+D:\Git\.netAss-2\TextEditor\obj\Debug\TextEditor.Login.resources
+D:\Git\.netAss-2\TextEditor\obj\Debug\TextEditor.Properties.Resources.resources
+D:\Git\.netAss-2\TextEditor\obj\Debug\TextEditor.TextFile.resources
+D:\Git\.netAss-2\TextEditor\obj\Debug\TextEditor.csproj.GenerateResource.cache
+D:\Git\.netAss-2\TextEditor\obj\Debug\TextEditor.csproj.CoreCompileInputs.cache
+D:\Git\.netAss-2\TextEditor\obj\Debug\TextEditor.exe
+D:\Git\.netAss-2\TextEditor\obj\Debug\TextEditor.pdb
