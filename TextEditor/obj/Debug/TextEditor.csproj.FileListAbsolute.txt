@@ -22,3 +22,4 @@ D:\Git\.netAss-2\TextEditor\obj\Debug\TextEditor.csproj.GenerateResource.cache
 D:\Git\.netAss-2\TextEditor\obj\Debug\TextEditor.csproj.CoreCompileInputs.cache
 D:\Git\.netAss-2\TextEditor\obj\Debug\TextEditor.exe
 D:\Git\.netAss-2\TextEditor\obj\Debug\TextEditor.pdb
+D:\Git\.netAss-2\TextEditor\obj\Debug\TextEditor.AboutBox1.resources

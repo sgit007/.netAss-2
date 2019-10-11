@@ -13,10 +13,10 @@ namespace TextEditor
     public partial class TextFile : Form
     {
         string filename = "";
-        float NewSize;
-        private void PopulateFontSizes() //populate the combo box
+        
+        private void PopulateFontSizes() //populate the combo box with font sizes
         {
-            for (int i = 1; i <= 75; i++)
+            for (int i = 1; i <= 20; i++)
             {
                 toolStripComboBox1.Items.Add(i);
             }
@@ -24,21 +24,27 @@ namespace TextEditor
             toolStripComboBox1.SelectedIndex = 11;
         }
 
-        public TextFile()
+        public TextFile(string [] splitter) //textFile constructor
         {
             InitializeComponent();
+            PopulateFontSizes();
+            if(splitter[2] == "View")
+            {
+                richTextBox1.ReadOnly = true;
+            }
+            toolStripTextBox1.Text = "Username: " + splitter[3];
         }
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        private void newToolStripMenuItem_Click(object sender, EventArgs e) //creates a new text area
         {
             newToolStripButton.PerformClick();
         }
-        private void newToolStripButton_Click(object sender, EventArgs e)
+        private void newToolStripButton_Click(object sender, EventArgs e) //creates a new text area
         {
             richTextBox1.Clear();
         }
-        private void openToolStripButton_Click(object sender, EventArgs e)
+        private void openToolStripButton_Click(object sender, EventArgs e) //opens file
         {
-            OpenFileDialog openFileDialogue1 = new OpenFileDialog(); //open a file dialog box
+            OpenFileDialog openFileDialogue1 = new OpenFileDialog();
             openFileDialogue1.Title = "Open a text file";
             openFileDialogue1.Filter = "Text Files(*.rtf) | *.rtf | All Files (*.*) | *.*";
             DialogResult dr = openFileDialogue1.ShowDialog();
@@ -49,11 +55,11 @@ namespace TextEditor
 
             }
         }
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        private void openToolStripMenuItem_Click(object sender, EventArgs e) //opens file
         {
             openToolStripButton.PerformClick();
         }
-        private void saveToolStripButton_Click(object sender, EventArgs e)
+        private void saveToolStripButton_Click(object sender, EventArgs e) 
         {
             if(filename == "")
             {
@@ -85,7 +91,8 @@ namespace TextEditor
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            this.DialogResult = DialogResult.OK;
         }
 
         private void cutToolStripButton_Click(object sender, EventArgs e)
@@ -123,13 +130,7 @@ namespace TextEditor
             
         }
 
-        private void toolStripComboBox1_Click(object sender, EventArgs e)
-        {
-            
-            float.TryParse(toolStripComboBox1.SelectedItem.ToString(), out NewSize);
-            Font NewFont = new Font(richTextBox1.Name, NewSize, richTextBox1.SelectionFont.Style);
-            richTextBox1.SelectionFont = NewFont;
-        }
+
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
@@ -177,6 +178,16 @@ namespace TextEditor
             {
                 richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, richTextBox1.SelectionFont.Style | FontStyle.Underline);
             }
+        }
+
+        private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            float NewSize;
+            float.TryParse(toolStripComboBox1.SelectedItem.ToString(), out NewSize);
+            Font NewFont = new Font(richTextBox1.Name, NewSize, richTextBox1.SelectionFont.Style);
+            richTextBox1.SelectionFont = NewFont;
+            
         }
     }
 }

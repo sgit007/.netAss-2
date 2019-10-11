@@ -26,8 +26,6 @@ namespace TextEditor
         private void loginButton_Click(object sender, EventArgs e) //logs the user in
         {
             
-            TextFile ss = new TextFile();
-            
             try
             {
                 string[] lines = System.IO.File.ReadAllLines("login.txt"); //reads the user details from login.txt
@@ -37,8 +35,10 @@ namespace TextEditor
                     string[] splitter = set.Split(',');
                     if (usernameTextBox.Text == splitter[0] && passwordTextBox.Text == splitter[1])
                     {
+                        TextFile ss = new TextFile(splitter);
                         this.Hide();
-                        ss.Show();
+                        ss.ShowDialog();
+                        this.Show();
                     }
                 }
             }
