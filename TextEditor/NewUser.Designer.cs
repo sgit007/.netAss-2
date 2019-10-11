@@ -187,6 +187,7 @@
             // 
             // userTypeComboBox
             // 
+            this.userTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.userTypeComboBox.FormattingEnabled = true;
             this.userTypeComboBox.Items.AddRange(new object[] {
             "View",

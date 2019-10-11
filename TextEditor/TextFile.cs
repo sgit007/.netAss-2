@@ -12,7 +12,17 @@ namespace TextEditor
 {
     public partial class TextFile : Form
     {
-        string filename;
+        string filename = "";
+        float NewSize;
+        private void PopulateFontSizes() //populate the combo box
+        {
+            for (int i = 1; i <= 75; i++)
+            {
+                toolStripComboBox1.Items.Add(i);
+            }
+
+            toolStripComboBox1.SelectedIndex = 11;
+        }
 
         public TextFile()
         {
@@ -30,7 +40,7 @@ namespace TextEditor
         {
             OpenFileDialog openFileDialogue1 = new OpenFileDialog(); //open a file dialog box
             openFileDialogue1.Title = "Open a text file";
-            openFileDialogue1.Filter = "Text Files(*.txt) | *.txt | All Files (*.*) | *.*";
+            openFileDialogue1.Filter = "Text Files(*.rtf) | *.rtf | All Files (*.*) | *.*";
             DialogResult dr = openFileDialogue1.ShowDialog();
             if (dr == DialogResult.OK)
             {
@@ -61,9 +71,9 @@ namespace TextEditor
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFile = new SaveFileDialog(); //save a file
-            saveFile.Filter = "Text Files(*.txt) | *.txt | All Files (*.*) | *.*";
+            saveFile.Filter = "Text Files(*.rtf) | *.rtf | All Files (*.*) | *.*";
             DialogResult dr = saveFile.ShowDialog();
-            if (dr == saveFile.ShowDialog())
+            if (dr == DialogResult.OK)
             {
                 richTextBox1.SaveFile(saveFile.FileName, RichTextBoxStreamType.PlainText);
             }
@@ -101,6 +111,72 @@ namespace TextEditor
         private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pasteToolStripButton.PerformClick();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void aboutToolStripButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        {
+            
+            float.TryParse(toolStripComboBox1.SelectedItem.ToString(), out NewSize);
+            Font NewFont = new Font(richTextBox1.Name, NewSize, richTextBox1.SelectionFont.Style);
+            richTextBox1.SelectionFont = NewFont;
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            Font BoldFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.SizeInPoints, FontStyle.Bold);
+            Font RegularFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.SizeInPoints, FontStyle.Regular);
+
+            if (richTextBox1.SelectionFont.Bold)
+            {
+                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, richTextBox1.SelectionFont.Style ^ FontStyle.Bold);
+            }
+
+            else
+            {
+                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, richTextBox1.SelectionFont.Style | FontStyle.Bold);
+            }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            Font ItalicFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.SizeInPoints, FontStyle.Italic);
+            Font RegularFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.SizeInPoints, FontStyle.Regular);
+
+            if (richTextBox1.SelectionFont.Italic)
+            {
+                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, richTextBox1.SelectionFont.Style ^ FontStyle.Italic);
+            }
+
+            else
+            {
+                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, richTextBox1.SelectionFont.Style | FontStyle.Italic);
+            }
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            Font UnderlineFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.SizeInPoints, FontStyle.Underline);
+            Font RegularFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.SizeInPoints, FontStyle.Regular);
+
+            if (richTextBox1.SelectionFont.Underline)
+            {
+                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, richTextBox1.SelectionFont.Style ^ FontStyle.Underline);
+            }
+
+            else
+            {
+                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, richTextBox1.SelectionFont.Style | FontStyle.Underline);
+            }
         }
     }
 }

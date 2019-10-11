@@ -26,17 +26,40 @@ namespace TextEditor
         {
             if (usernameTextBox.Text != "" && passwordTextBox.Text != "" && reEnterPasswordTextBox.Text != "" && FirstNameBox.Text != "" && LastNameBox.Text != "" && userTypeComboBox.Text != "")
             {
-                if (passwordTextBox.Text == reEnterPasswordTextBox.Text)
+                if (!containsNumber(FirstNameBox.Text) && !containsNumber(LastNameBox.Text))
                 {
-                    if (FirstNameBox == LastNameBox)
+                    if (passwordTextBox.Text == reEnterPasswordTextBox.Text)
                     {
-                        var isNumeric = int.TryParse("123", out int n);
-                        MessageBox.Show("successful!", "Congrats");
+                        string user = usernameTextBox.Text + "," + passwordTextBox.Text + "," + userTypeComboBox.Text + "," + FirstNameBox.Text + "," + LastNameBox.Text + "," + dateTimePicker1.Text;
+                        saveUser(user);
+                        MessageBox.Show("Successfully created", "Congrats!");
+                        this.Hide();
                     }
+                    else
+                    { MessageBox.Show("Password Doesnt Match", "Error"); }
                 }
+                else
+                { MessageBox.Show("Name Cannot Contain Number!!", "Error"); }
             }
             else
-                MessageBox.Show("Please fill out all the details", "Error"); 
+            { MessageBox.Show("Please fill out all the details", "Error"); }
         }
+
+        private bool containsNumber(string value)
+        {
+            return value.Any(c => char.IsDigit(c));
+        }
+        private void saveUser(string user)
+        {
+            string[] temp = System.IO.File.ReadAllLines("login.txt"); //reads the user details from login.txt
+            string[] database = new string[temp.Length+1];
+            for(int i = 0; i<temp.Length; i++ )
+            {
+                database[i] = temp[i];
+            }
+            database[temp.Length] = user;
+            System.IO.File.WriteAllLines("login.txt",database);
+        }
+
     }
 }
