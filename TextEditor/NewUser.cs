@@ -17,12 +17,12 @@ namespace TextEditor
             InitializeComponent();
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        private void cancelButton_Click(object sender, EventArgs e) //closes the new user menu and returns to login
         {
             this.Hide();   
         }
 
-        private void SubmitButton_Click(object sender, EventArgs e)
+        private void SubmitButton_Click(object sender, EventArgs e) //store the new user and return to login
         {
             if (usernameTextBox.Text != "" && passwordTextBox.Text != "" && reEnterPasswordTextBox.Text != "" && FirstNameBox.Text != "" && LastNameBox.Text != "" && userTypeComboBox.Text != "")
             {
@@ -45,7 +45,7 @@ namespace TextEditor
             { MessageBox.Show("Please fill out all the details", "Error"); }
         }
 
-        private bool containsNumber(string value)
+        private bool containsNumber(string value) //validation checks
         {
             return value.Any(c => char.IsDigit(c));
         }
@@ -58,7 +58,7 @@ namespace TextEditor
                 database[i] = temp[i];
             }
             database[temp.Length] = user;
-            System.IO.File.WriteAllLines("login.txt",database);
+            System.IO.File.WriteAllLines("login.txt",database); //writes the new user data into login.txt
         }
 
     }

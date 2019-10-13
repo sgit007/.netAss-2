@@ -59,7 +59,7 @@ namespace TextEditor
         {
             openToolStripButton.PerformClick();
         }
-        private void saveToolStripButton_Click(object sender, EventArgs e) 
+        private void saveToolStripButton_Click(object sender, EventArgs e) //saves file
         {
             if(filename == "")
             {
@@ -70,11 +70,11 @@ namespace TextEditor
                 richTextBox1.SaveFile(filename, RichTextBoxStreamType.PlainText);
             }
         }
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e) //saves file
         {
             saveToolStripButton.PerformClick();
         }
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e) //save as for the file
         {
             SaveFileDialog saveFile = new SaveFileDialog(); //save a file
             saveFile.Filter = "Text Files(*.rtf) | *.rtf | All Files (*.*) | *.*";
@@ -84,55 +84,55 @@ namespace TextEditor
                 richTextBox1.SaveFile(saveFile.FileName, RichTextBoxStreamType.PlainText);
             }
         }
-        private void saveAsToolStripButton_Click(object sender, EventArgs e)
+        private void saveAsToolStripButton_Click(object sender, EventArgs e) //save as for the file
         {
             saveAsToolStripMenuItem.PerformClick();
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e) //exits the form
         {
             this.Hide();
             this.DialogResult = DialogResult.OK;
         }
 
-        private void cutToolStripButton_Click(object sender, EventArgs e)
+        private void cutToolStripButton_Click(object sender, EventArgs e) //cuts the text
         {
             richTextBox1.Cut();
         }
-        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e) //cuts the text
         {
             cutToolStripButton.PerformClick();
         }
-        private void copyToolStripButton_Click(object sender, EventArgs e)
+        private void copyToolStripButton_Click(object sender, EventArgs e) //copies the text
         {
             richTextBox1.Copy();
         }
-        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e) //copies the text
         {
             copyToolStripButton.PerformClick();
         }
-        private void pasteToolStripButton_Click(object sender, EventArgs e)
+        private void pasteToolStripButton_Click(object sender, EventArgs e) //pastes the text
         {
             richTextBox1.Paste();
         }
-        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e) //pastes the text
         {
             pasteToolStripButton.PerformClick();
         }
 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e) //about message box
         {
-            
+            MessageBox.Show("TextFile \n version 1.0.0 \n Copyright 2019 \n Owner: Sakib Mahmud", "About");
         }
 
-        private void aboutToolStripButton_Click(object sender, EventArgs e)
+        private void aboutToolStripButton_Click(object sender, EventArgs e) //about message box
         {
-            
+            aboutToolStripMenuItem.PerformClick();
         }
 
 
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void toolStripButton1_Click(object sender, EventArgs e) //font bold
         {
             Font BoldFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.SizeInPoints, FontStyle.Bold);
             Font RegularFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.SizeInPoints, FontStyle.Regular);
@@ -148,7 +148,7 @@ namespace TextEditor
             }
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
+        private void toolStripButton2_Click(object sender, EventArgs e) //font italic
         {
             Font ItalicFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.SizeInPoints, FontStyle.Italic);
             Font RegularFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.SizeInPoints, FontStyle.Regular);
@@ -164,7 +164,7 @@ namespace TextEditor
             }
         }
 
-        private void toolStripButton3_Click(object sender, EventArgs e)
+        private void toolStripButton3_Click(object sender, EventArgs e) //font underline
         {
             Font UnderlineFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.SizeInPoints, FontStyle.Underline);
             Font RegularFont = new Font(richTextBox1.SelectionFont.FontFamily, richTextBox1.SelectionFont.SizeInPoints, FontStyle.Regular);
@@ -180,7 +180,7 @@ namespace TextEditor
             }
         }
 
-        private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e) //font size 1 to 20
         {
             
             float NewSize;

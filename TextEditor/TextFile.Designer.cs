@@ -382,7 +382,8 @@
             // 
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 28);
-            this.toolStripTextBox1.Text = "Username: Sakib";
+            this.toolStripTextBox1.Text = "User: Sakib";
+
             // 
             // toolStrip2
             // 
