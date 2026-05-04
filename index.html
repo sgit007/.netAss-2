@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121933;
+      --text: #e8ecff;
+      --muted: #a7b0d6;
+      --accent: #6ea8fe;
+      --accent-2: #8ef0d0;
+      --ring: rgba(110, 168, 254, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1200px 700px at 10% -10%, #1b2550 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 5rem 0 4rem;
+    }
+
+    .kicker {
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      font-weight: 600;
+      font-size: 0.82rem;
+      margin-bottom: 0.7rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 1.1;
+      margin: 0 0 1rem;
+    }
+
+    .hero-text {
+      max-width: 65ch;
+      color: var(--muted);
+      margin-bottom: 1.8rem;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.72rem 1.1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #6f8cff);
+      color: #0a0f1f;
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: transparent;
+      border-color: #3b4b80;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px var(--ring);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0 3rem;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #151d3a, var(--panel));
+      border: 1px solid #2a3768;
+      border-radius: 14px;
+      padding: 1.2rem;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.55rem;
+      font-size: 1.05rem;
+      color: #d8e2ff;
+    }
+
+    .card p { margin: 0; color: var(--muted); }
+
+    .section-title {
+      margin: 0 0 0.7rem;
+      font-size: clamp(1.35rem, 2.2vw, 2rem);
+    }
+
+    .pill-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .pill {
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid #304072;
+      background: #0e1530;
+      color: #d3dcff;
+      font-size: 0.9rem;
+    }
+
+    .timeline {
+      margin: 1.2rem 0 3rem;
+      border-left: 2px solid #2d3b6a;
+      padding-left: 1rem;
+    }
+
+    .timeline-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .timeline-item h4 {
+      margin: 0 0 0.2rem;
+      font-size: 1rem;
+    }
+
+    .timeline-item .meta {
+      color: #9fa9d2;
+      font-size: 0.92rem;
+      margin-bottom: 0.35rem;
+    }
+
+    footer {
+      border-top: 1px solid #293660;
+      padding: 1.2rem 0 2rem;
+      color: #98a4cf;
+      font-size: 0.92rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <div class="kicker">Portfolio</div>
+    <h1>Hi, I'm <span style="color: var(--accent)">Your Name</span> — I build useful digital products.</h1>
+    <p class="hero-text">
+      Welcome to my portfolio. This front page highlights my core achievements, technical skills, and work experience.
+      You can customize each section with your own projects, metrics, and career milestones.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#achievements">View Achievements</a>
+      <a class="btn btn-secondary" href="#experience">See Experience</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="achievements">
+      <h2 class="section-title">Achievements</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Project Impact</h3>
+          <p>Increased application performance by 40% and reduced load times across key workflows.</p>
+        </article>
+        <article class="card">
+          <h3>Recognition</h3>
+          <p>Received "Top Contributor" award for delivering high-impact features ahead of schedule.</p>
+        </article>
+        <article class="card">
+          <h3>Open Source</h3>
+          <p>Maintained public libraries used by developers worldwide and supported active contributors.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="pill-wrap" aria-label="skills list">
+        <span class="pill">JavaScript / TypeScript</span>
+        <span class="pill">HTML / CSS</span>
+        <span class="pill">React</span>
+        <span class="pill">Node.js</span>
+        <span class="pill">C# / .NET</span>
+        <span class="pill">SQL</span>
+        <span class="pill">Git & CI/CD</span>
+        <span class="pill">System Design</span>
+      </div>
+    </section>
+
+    <section id="experience" style="margin-top: 2.4rem;">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4>Senior Software Engineer — Example Company</h4>
+          <div class="meta">2023 – Present</div>
+          <div>Led full-stack development initiatives, mentored engineers, and shipped customer-facing features.</div>
+        </div>
+        <div class="timeline-item">
+          <h4>Software Engineer — Example Startup</h4>
+          <div class="meta">2020 – 2023</div>
+          <div>Built API services, improved deployment pipelines, and collaborated with product/design teams.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    © <span id="year"></span> Your Name. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
