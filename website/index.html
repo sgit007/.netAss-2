@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RoadReady Auto Accessories</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <a class="brand" href="#" aria-label="RoadReady home">
+      <span class="brand-icon">RR</span>
+      <span>RoadReady</span>
+    </a>
+
+    <form class="search-panel" id="searchForm" role="search">
+      <label class="sr-only" for="productSearch">Search car products</label>
+      <select aria-label="Choose product department">
+        <option>All departments</option>
+        <option>Interior</option>
+        <option>Exterior</option>
+        <option>Electronics</option>
+        <option>Care & cleaning</option>
+      </select>
+      <input id="productSearch" type="search" placeholder="Search floor mats, chargers, polish..." />
+      <button type="submit">Search</button>
+    </form>
+
+    <nav class="account-links" aria-label="Account and shopping links">
+      <a href="#">Deals</a>
+      <a href="#">Account</a>
+      <a class="cart-link" href="#">Cart <strong>0</strong></a>
+    </nav>
+  </header>
+
+  <main class="marketplace-shell">
+    <aside class="category-sidebar" aria-label="Product categories">
+      <h2>Shop by type</h2>
+      <ul>
+        <li><a href="#interior">Interior accessories</a></li>
+        <li><a href="#exterior">Exterior accessories</a></li>
+        <li><a href="#electronics">Car electronics</a></li>
+        <li><a href="#cleaning">Cleaning supplies</a></li>
+        <li><a href="#tools">Tools & emergency</a></li>
+        <li><a href="#tires">Tire care</a></li>
+        <li><a href="#storage">Storage organizers</a></li>
+      </ul>
+      <div class="fit-finder">
+        <p class="eyebrow">Fit finder</p>
+        <h3>Find parts for your car</h3>
+        <button type="button">Add vehicle</button>
+      </div>
+    </aside>
+
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-copy">
+        <p class="eyebrow">Summer road trip sale</p>
+        <h1 id="hero-heading">Accessories that make every drive cleaner, safer, and smarter.</h1>
+        <p>Browse highly rated gear for daily commuters, weekend detailers, and road-trip families.</p>
+        <div class="hero-actions">
+          <a class="primary-cta" href="#featured">Shop featured picks</a>
+          <a class="secondary-cta" href="#bestsellers">View best sellers</a>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="Featured promotion">
+        <span>Bundle & save</span>
+        <strong>Up to 35% off</strong>
+        <small>Detailing kits, organizers, and phone mounts</small>
+      </div>
+    </section>
+
+    <section class="best-sellers-window" id="bestsellers" aria-labelledby="bestseller-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Popular now</p>
+          <h2 id="bestseller-heading">Best sellers</h2>
+        </div>
+        <a href="#">See all</a>
+      </div>
+      <div class="product-grid">
+        <article class="product-card" data-keywords="floor mats interior waterproof">
+          <span class="badge">#1 seller</span>
+          <div class="product-emoji">🧼</div>
+          <h3>All-weather floor mats</h3>
+          <p>Trim-to-fit rubber mats with raised spill edges.</p>
+          <div class="rating">★★★★★ <span>12,450</span></div>
+          <strong>$39.99</strong>
+        </article>
+        <article class="product-card" data-keywords="phone mount electronics dashboard">
+          <span class="badge">Deal</span>
+          <div class="product-emoji">📱</div>
+          <h3>Magnetic phone mount</h3>
+          <p>Low-profile dash mount with 360° rotation.</p>
+          <div class="rating">★★★★☆ <span>8,912</span></div>
+          <strong>$18.49</strong>
+        </article>
+        <article class="product-card" data-keywords="jump starter emergency battery tools">
+          <span class="badge">Top rated</span>
+          <div class="product-emoji">🔋</div>
+          <h3>Portable jump starter</h3>
+          <p>Compact 1200A pack with USB-C power bank.</p>
+          <div class="rating">★★★★★ <span>6,721</span></div>
+          <strong>$74.95</strong>
+        </article>
+        <article class="product-card" data-keywords="organizer trunk storage cargo">
+          <span class="badge">Hot</span>
+          <div class="product-emoji">🧰</div>
+          <h3>Collapsible trunk organizer</h3>
+          <p>Three compartments, tie-down straps, and cooler pocket.</p>
+          <div class="rating">★★★★☆ <span>4,308</span></div>
+          <strong>$26.99</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="featured-deals" id="featured" aria-labelledby="featured-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Recommended</p>
+          <h2 id="featured-heading">Featured departments</h2>
+        </div>
+      </div>
+      <div class="deal-row">
+        <a id="interior" class="deal-card" href="#">Seat covers</a>
+        <a id="exterior" class="deal-card" href="#">Car covers</a>
+        <a id="electronics" class="deal-card" href="#">Dash cams</a>
+        <a id="cleaning" class="deal-card" href="#">Detailing sprays</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>RoadReady Auto Accessories — marketplace demo</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
